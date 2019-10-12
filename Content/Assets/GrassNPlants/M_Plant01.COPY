@@ -1,0 +1,113 @@
+Begin Object Class=/Script/Engine.Material Name="M_Plant01"
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_1"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_2"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMaterialFunctionCall Name="MaterialExpressionMaterialFunctionCall_1"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMaterialFunctionCall Name="MaterialExpressionMaterialFunctionCall_2"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_1"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_2"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionVertexColor Name="MaterialExpressionVertexColor_0"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionConstant_1"
+      R=0.150000
+      MaterialExpressionEditorX=-800
+      MaterialExpressionEditorY=288
+      MaterialExpressionGuid=7412EF8640447327B23A0F861970A14E
+      Material=Material'"M_Plant01"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_2"
+      R=10.000000
+      MaterialExpressionEditorX=-320
+      MaterialExpressionEditorY=320
+      MaterialExpressionGuid=2A4970074B5B88D99971028044AB613E
+      Material=Material'"M_Plant01"'
+   End Object
+   Begin Object Name="MaterialExpressionMaterialFunctionCall_1"
+      MaterialFunction=MaterialFunction'"/Engine/Functions/Engine_MaterialFunctions02/Utility/DitherTemporalAA.DitherTemporalAA"'
+      FunctionInputs(0)=(ExpressionInputId=982BCAE7401F814CDC0AE2955DEE46F3,Input=(OutputIndex=-1,InputName="Alpha Threshold"))
+      FunctionInputs(1)=(ExpressionInputId=E8A932AF4299B0D6C16EDB8B1E912796,Input=(OutputIndex=-1,InputName="Random"))
+      FunctionOutputs(0)=(ExpressionOutputId=9BC32B084665F3D2D59A90AA45CA8A9F,Output=(OutputName="Result"))
+      MaterialExpressionEditorX=-256
+      MaterialExpressionEditorY=512
+      MaterialExpressionGuid=BEFBFBBF48E3B3B6D7BB7C8BB2B0566A
+      Material=Material'"M_Plant01"'
+      Outputs(0)=(OutputName="Result")
+   End Object
+   Begin Object Name="MaterialExpressionMaterialFunctionCall_2"
+      MaterialFunction=MaterialFunction'"/Engine/Functions/Engine_MaterialFunctions01/WorldPositionOffset/SimpleGrassWind.SimpleGrassWind"'
+      FunctionInputs(0)=(ExpressionInputId=59B25CA344057CBC047826BBB081BB6A,Input=(Expression=MaterialExpressionConstant'"M_Plant01:MaterialExpressionConstant_1"',InputName="WindIntensity"))
+      FunctionInputs(1)=(ExpressionInputId=9F127867429E94C853245BA415B9133D,Input=(Expression=MaterialExpressionConstant'"M_Plant01:MaterialExpressionConstant_1"',InputName="WindWeight"))
+      FunctionInputs(2)=(ExpressionInputId=B142CFD84EFE5357F8C6E6A44E070E4D,Input=(InputName="WindSpeed"))
+      FunctionInputs(3)=(ExpressionInputId=12C80829425389C3EE47AC97BD178E9D,Input=(Expression=MaterialExpressionConstant'"M_Plant01:MaterialExpressionConstant_1"',InputName="AdditionalWPO"))
+      FunctionOutputs(0)=(ExpressionOutputId=786F77A7413AC09BF7F84581E91EE756,Output=(OutputName="Result"))
+      MaterialExpressionEditorX=-656
+      MaterialExpressionEditorY=240
+      MaterialExpressionGuid=0B00EC6A40DE1799A15FE7A36451FC3B
+      Material=Material'"M_Plant01"'
+      Outputs(0)=(OutputName="Result")
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_1"
+      A=(Expression=MaterialExpressionConstant'"M_Plant01:MaterialExpressionConstant_2"')
+      B=(Expression=MaterialExpressionMaterialFunctionCall'"M_Plant01:MaterialExpressionMaterialFunctionCall_1"')
+      MaterialExpressionEditorX=-224
+      MaterialExpressionEditorY=320
+      MaterialExpressionGuid=06FAEC474053D38910D048AFC6E60D72
+      Material=Material'"M_Plant01"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_2"
+      A=(Expression=MaterialExpressionMaterialFunctionCall'"M_Plant01:MaterialExpressionMaterialFunctionCall_2"')
+      B=(Expression=MaterialExpressionVertexColor'"M_Plant01:MaterialExpressionVertexColor_0"',OutputIndex=1,Mask=1,MaskR=1)
+      MaterialExpressionEditorX=-320
+      MaterialExpressionEditorY=208
+      MaterialExpressionGuid=06FAEC474053D38910D048AFC6E60D72
+      Material=Material'"M_Plant01"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_0"
+      Texture=Texture2D'"/Game/FirstPersonBP/Texture_Plant01.Texture_Plant01"'
+      MaterialExpressionEditorX=240
+      MaterialExpressionEditorY=-320
+      MaterialExpressionGuid=80900E2043F71EF5427EFDA038D88C94
+      Material=Material'"M_Plant01"'
+   End Object
+   Begin Object Name="MaterialExpressionVertexColor_0"
+      MaterialExpressionEditorX=-576
+      MaterialExpressionEditorY=480
+      MaterialExpressionGuid=D23EDAB44B8EA50D21FB4FAA1639C3A4
+      Material=Material'"M_Plant01"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   BaseColor=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_0"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   WorldPositionOffset=(Expression=MaterialExpressionMultiply'"MaterialExpressionMultiply_2"')
+   PixelDepthOffset=(Expression=MaterialExpressionMultiply'"MaterialExpressionMultiply_1"')
+   bUsedWithStaticLighting=True
+   Expressions(0)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_0"'
+   Expressions(1)=MaterialExpressionMultiply'"MaterialExpressionMultiply_2"'
+   Expressions(2)=MaterialExpressionMultiply'"MaterialExpressionMultiply_1"'
+   Expressions(3)=MaterialExpressionMaterialFunctionCall'"MaterialExpressionMaterialFunctionCall_1"'
+   Expressions(4)=MaterialExpressionMaterialFunctionCall'"MaterialExpressionMaterialFunctionCall_2"'
+   Expressions(5)=MaterialExpressionConstant'"MaterialExpressionConstant_1"'
+   Expressions(6)=MaterialExpressionVertexColor'"MaterialExpressionVertexColor_0"'
+   Expressions(7)=MaterialExpressionConstant'"MaterialExpressionConstant_2"'
+   MaterialFunctionInfos(0)=(StateId=71028A8D47BF40373A3A0B8AD7B60E53,Function=MaterialFunction'"/Engine/Functions/Engine_MaterialFunctions02/Texturing/ScreenAlignedPixelToPixelUVs.ScreenAlignedPixelToPixelUVs"')
+   MaterialFunctionInfos(1)=(StateId=22D58D0F45CC84AB89A3628B351D83C8,Function=MaterialFunction'"/Engine/Functions/Engine_MaterialFunctions02/Utility/DitherTemporalAA.DitherTemporalAA"')
+   MaterialFunctionInfos(2)=(StateId=49637CE3497F6537F49E7E9678C0735F,Function=MaterialFunction'"/Engine/Functions/Engine_MaterialFunctions01/WorldPositionOffset/SimpleGrassWind.SimpleGrassWind"')
+   bCanMaskedBeAssumedOpaque=True
+   StateId=031BFCF94E3768B5EFF430A08D6BCFA2
+   ReferencedTextureGuids(0)=DB44F6A8477F0CAC016F10A37403E098
+   ReferencedTextureGuids(1)=307757E1458E615C7D97A39E32219707
+   TextureStreamingDataVersion=1
+   TextureStreamingData(0)=(SamplingScale=0.500000,UVChannelIndex=0,TextureName="Good64x64TilingNoiseHighFreq",TextureReference=/Engine/EngineMaterials/Good64x64TilingNoiseHighFreq.Good64x64TilingNoiseHighFreq)
+   TextureStreamingData(1)=(SamplingScale=1.000000,UVChannelIndex=0,TextureName="Plant01_Texture",TextureReference=/Game/FirstPersonBP/Texture_Plant01.Texture_Plant01)
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_0"'
+   LightingGuid=92F83EB747D3DF393949C799E1ABB827
+End Object
